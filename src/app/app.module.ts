@@ -1,20 +1,26 @@
+import { ProductModule } from './product-list/product/product.module';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-
+import {RouterModule} from '@angular/router';
 import { AppComponent } from './app.component';
+import { WelcomeComponent } from './home/welcome/welcome.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot([
+      {path: `welcome`, component: WelcomeComponent},
+      {path: `**`, redirectTo: `welcome`, pathMatch: `full`}
+    ]),
+    ProductModule
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
