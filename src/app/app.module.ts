@@ -1,3 +1,4 @@
+import { ValidationService } from './FormsTutorial/validation-service.service';
 import { ProductModule } from './product-list/product/product.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Component } from '@angular/core';
@@ -30,6 +31,7 @@ import { UserReactiveComponent } from './FormsTutorial/user-reactive/user-reacti
     FormsModule,
     ReactiveFormsModule
   ],
+  providers: [ ValidationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

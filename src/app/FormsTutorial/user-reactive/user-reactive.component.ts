@@ -1,3 +1,4 @@
+import { ValidationService } from './../validation-service.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms'
 
@@ -19,6 +20,8 @@ export class UserReactiveComponent implements OnInit {
   //   })
   // });
 
+  sex = [`Male`,`Female`,`Unknown`];
+
   registerForm: FormGroup;
 
   constructor(private formBuilder: FormBuilder) {
@@ -27,11 +30,11 @@ export class UserReactiveComponent implements OnInit {
 
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
-      name: ['', Validators.required],
-      street: ['', Validators.required],
-      zip: ['', Validators.required],
-      phone: ['', Validators.required],
-      email: ['', Validators.required]
+      name: ['', [Validators.required, ValidationService.nateValidator]],
+      street: ['', [Validators.required]],
+      zip: ['', [Validators.required]],
+      phone: ['', [Validators.required, ValidationService.phoneValidator]],
+      email: ['', [Validators.required, ValidationService.emailValidator]]
     })
 }
 

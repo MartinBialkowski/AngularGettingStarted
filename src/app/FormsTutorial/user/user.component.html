@@ -1,7 +1,7 @@
 <h1>Template Driven Forms</h1>
 <form #form="ngForm" (ngSubmit)="logForm(form.value)">
     <div ngModelGroup="basic information">
-        <div>
+        <div >
             <label>firstname:</label>
             <input type="text" name="firstname" ngModel [(ngModel)]="name" placeholder="name" required>
             <div *ngIf="name.dirty">
