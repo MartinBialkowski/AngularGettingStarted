@@ -1,0 +1,40 @@
+<h1>Model Driven Forms</h1>
+<form [formGroup]="registerForm" (submit)="saveUser()" style="text-align: left">
+  <div>
+    <label>firstname:</label>
+    <input type="text" formControlName="name" placeholder="name">
+    <div *ngIf="registerForm.controls.name.dirty">
+      <p *ngIf="registerForm.controls.name.errors">This field is required</p>
+    </div>
+  </div>
+  <div>
+    <label>street:</label>
+    <input type="text" formControlName="street" placeholder="street">
+    <div *ngIf="registerForm.controls.street.dirty">
+      <p *ngIf="registerForm.controls.street.errors">This field is required</p>
+    </div>
+  </div>
+  <div>
+    <label>zip:</label>
+    <input type="text" formControlName="zip" placeholder="zip">
+    <div *ngIf="registerForm.controls.zip.dirty">
+      <p *ngIf="registerForm.controls.zip.errors">This field is required</p>
+    </div>
+  </div>
+  <div>
+    <label>phone:</label>
+    <input type="text" formControlName="phone" placeholder="phone">
+    <div *ngIf="registerForm.controls.phone.dirty">
+      <p *ngIf="registerForm.controls.phone.errors">This field is required</p>
+    </div>
+  </div>
+  <div>
+    <label>email:</label>
+    <input type="text" formControlName="email" placeholder="email">
+    <div *ngIf="registerForm.controls.email.dirty">
+      <p *ngIf="registerForm.controls.email.errors">This field is required</p>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary" [disabled]="!registerForm.valid"
+  style="margin: 15px">submit</button>
+</form>

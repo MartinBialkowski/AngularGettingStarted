@@ -7,6 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserComponent implements OnInit {
 
+  logForm(value: any){
+    console.log(value);
+    console.log(this.name);
+  }
+
+  name: string;
+  street: string;
+  zip: string;
+  phone: string;
+  email: string;
+
   constructor() { }
 
   ngOnInit() {
