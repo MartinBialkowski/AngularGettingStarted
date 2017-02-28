@@ -36,8 +36,8 @@
           <tr *ngFor='let product of products | productFilter:listFilter'>
             <td>
               <img *ngIf="isShowed"
-              src = {{product.imageUrl}} title = {{product.productName}}
-              style.width.px = {{imageWidth}} style.margin.px = {{imageMargin}}/>
+              [src] = "product.imageUrl" [title] = "product.productName"
+              [style.width.px] = "imageWidth" [style.margin.px] = "imageMargin"/>
             </td>
             <td><a [routerLink]="['/product', product.productId]">
                 {{product.productName}}
