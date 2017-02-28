@@ -1,9 +1,9 @@
 <h1>Template Driven Forms</h1>
 <form #form="ngForm" (ngSubmit)="logForm(form.value)">
     <div ngModelGroup="basic information">
-        <div >
+        <div>
             <label>firstname:</label>
-            <input type="text" name="firstname" ngModel [(ngModel)]="name" placeholder="name" required>
+            <input type="text" name="firstname" ngModel [(ngModel)]="name" placeholder="name" class="form-control" required>
             <div *ngIf="name.dirty">
                 <div *ngIf="form.hasError('required', 'name')" class="help-block">Name is required</div>
             </div>
@@ -11,7 +11,7 @@
 
         <div>
             <label>street:</label>
-            <input type="text" name="street" ngModel [(ngModel)]="street" placeholder="street" required>
+            <input type="text" name="street" ngModel [(ngModel)]="street" placeholder="street" class="form-control" required>
             <div *ngIf="street.dirty">
                 <div *ngIf="form.hasError('required', 'street')" class="help-block">Street is required</div>
             </div>
@@ -19,7 +19,7 @@
         <div>
 
             <label>zip:</label>
-            <input type="text" name="zip" ngModel [(ngModel)]="zip" placeholder="zip" required>
+            <input type="text" name="zip" ngModel [(ngModel)]="zip" placeholder="zip" class="form-control" required>
             <div *ngIf="zip.dirty">
                 <div *ngIf="form.hasError('required', 'zip')" class="help-block">Zip is required</div>
             </div>
@@ -28,17 +28,17 @@
     <div ngModelGroup="additional information">
         <div>
             <label>phone:</label>
-            <input type="text" name="phone" ngModel [(ngModel)]="phone" placeholder="(xxx) xxx-xxxx" 
-            pattern="^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$" required>
-            <div *ngIf="phone.dirty">
-                <div *ngIf="form.hasError('required', 'phone')" class="help-block">Phone is required</div>
-                <div *ngIf="form.hasError('pattern', 'phone')" class="help-block">Phone is invalid</div>
-            </div>
+            <input type="text" name="phone" ngModel [(ngModel)]="phone" placeholder="(xxx) xxx-xxxx" pattern="^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$"
+                class="form-control" required>
+                <div *ngIf="phone.dirty">
+                    <div *ngIf="form.hasError('required', 'phone')" class="help-block">Phone is required</div>
+                    <div *ngIf="form.hasError('pattern', 'phone')" class="help-block">Phone is invalid</div>
+                </div>
         </div>
         <div>
             <label>email:</label>
             <input type="text" name="email" ngModel [(ngModel)]="email" placeholder="email" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"
-                required>
+                class="form-control" required>
                 <div *ngIf="email.dirty">
                     <div *ngIf="form.hasError('required', 'email')" class="help-block">Email is required</div>
                     <div *ngIf="form.hasError('pattern', 'email')" class="help-block">Email is invalid</div>

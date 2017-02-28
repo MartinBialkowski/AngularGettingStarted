@@ -2,38 +2,44 @@
 <form [formGroup]="registerForm" (submit)="saveUser()">
   <div class="form-group">
     <label>firstname:</label>
-    <input type="text" formControlName="name" placeholder="name">
+    <input type="text" formControlName="name" placeholder="name" class="form-control">
     <div *ngIf="registerForm.controls.name.dirty">
       <p *ngIf="registerForm.controls.name.hasError('required')">This field is required</p>
     </div>
   </div>
   <div class="form-group">
     <label>street:</label>
-    <input type="text" formControlName="street" placeholder="street">
+    <input type="text" formControlName="street" placeholder="street" class="form-control">
     <div *ngIf="registerForm.controls.street.dirty">
       <p *ngIf="registerForm.controls.street.hasError('required')">This field is required</p>
     </div>
   </div>
-  <div>
+  <div class="form-group">
     <label>zip:</label>
-    <input type="text" formControlName="zip" placeholder="zip">
+    <input type="text" formControlName="zip" placeholder="zip" class="form-control">
     <div *ngIf="registerForm.controls.zip.dirty">
       <p *ngIf="registerForm.controls.zip.hasError('required')">This field is required</p>
     </div>
   </div>
-  <div>
+  <div class="form-group">
     <label>phone:</label>
-    <input type="text" formControlName="phone" placeholder="phone">
+    <input type="text" formControlName="phone" placeholder="phone" class="form-control">
     <div *ngIf="registerForm.controls.phone.dirty">
       <p *ngIf="registerForm.controls.phone.hasError('required')">This field is required</p>
     </div>
   </div>
-  <div>
+  <div class="form-group">
     <label>email:</label>
-    <input type="text" formControlName="email" placeholder="email">
+    <input type="text" formControlName="email" placeholder="email" class="form-control">
     <div *ngIf="registerForm.controls.email.dirty">
       <p *ngIf="registerForm.controls.email.hasError('required')">This field is required</p>
     </div>
+  </div>
+  <div class="form-group">
+    <label>Sex:</label>
+    <select class="form-control">
+      <option *ngFor="let sex of sexes" [value]="sex">{{sex}}</option>
+    </select>
   </div>
   <button type="submit" class="btn btn-primary" [disabled]="!registerForm.valid"
   style="margin: 15px">submit</button>

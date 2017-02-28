@@ -20,7 +20,7 @@ export class UserReactiveComponent implements OnInit {
   //   })
   // });
 
-  sex = [`Male`,`Female`,`Unknown`];
+  sexes = [`Male`,`Female`,`Unknown`];
 
   registerForm: FormGroup;
 

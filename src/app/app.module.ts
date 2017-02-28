@@ -15,7 +15,6 @@ import { UserReactiveComponent } from './FormsTutorial/user-reactive/user-reacti
     AppComponent,
     WelcomeComponent,
     UserComponent,
-    UserComponent,
     UserReactiveComponent,
   ],
   imports: [
@@ -23,8 +22,8 @@ import { UserReactiveComponent } from './FormsTutorial/user-reactive/user-reacti
     HttpModule,
     RouterModule.forRoot([
       {path: `welcome`, component: WelcomeComponent},
-      {path: `user`, component: UserComponent},
       {path: `userReactive`, component: UserReactiveComponent},
+      {path: `user`, component: UserComponent},  
       {path: `**`, redirectTo: `welcome`, pathMatch: `full`}
     ]),
     ProductModule,
